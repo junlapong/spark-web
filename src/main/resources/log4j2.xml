@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration status="OFF">
+
+    <Properties>
+        <Property name="console-layout">[%d{HH:mm:ss,SSS zzz}] %-5level [%t] %c{2}.%M(%F:%L) - %msg%n</Property>
+        <Property name="file-layout">[%d{yyy-MM-dd HH:mm:ss.SSS zzz}] %-5level [%t] %logger.%M() - %msg%n</Property>
+        <Property name="short-layout">[%d{HH:mm:ss,SSS zzz}] %-5level [%t] %c{2}.%M() - %msg%n</Property>
+        
+		<!-- /path/to/logs -->
+        <Property name="log-path">log</Property>
+		<Property name="log-name">spark-web</Property>
+    </Properties>
+
+	<Appenders>
+
+	    <Console name="CONSOLE" target="SYSTEM_OUT">
+            <PatternLayout pattern="${console-layout}"/>
+        </Console>
+
+        <RollingFile name="ROLLING" fileName="${log-path}/${log-name}.log"
+					 filePattern="${log-path}/${log-name}_%d{yyyyMMdd}_%i.log">
+			<PatternLayout>
+                <Pattern>${file-layout}</Pattern>
+            </PatternLayout>
+            <Policies>
+                <TimeBasedTriggeringPolicy />
+                <SizeBasedTriggeringPolicy size="10 MB"/>
+            </Policies>
+            <DefaultRolloverStrategy max="2000"/>
+        </RollingFile>
+        
+    </Appenders>
+
+	<Loggers>
+
+		<AsyncLogger name="org.eclipse.jetty" level="INFO" />
+		<AsyncLogger name="spark.template" level="DEBUG" />
+		<AsyncLogger name="spark" level="INFO" />
+		<AsyncLogger name="freemarker" level="INFO" />
+
+  		<Root level="DEBUG">
+   			<AppenderRef ref="CONSOLE" />
+   			<!-- AppenderRef ref="ROLLING" /-->
+  		</Root>
+  		
+	</Loggers>
+
+</Configuration>
