@@ -6,7 +6,7 @@ Spark - A tiny Sinatra inspired framework for creating web applications in Java 
 
 ## Maven
 
-Add the dependency to your POM.xml:
+Add the dependency to your pom.xml:
 
 	<dependency>
 	    <groupId>com.sparkjava</groupId>
