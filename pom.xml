@@ -12,10 +12,10 @@
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <jdk.version>1.8</jdk.version>
-        <spark-core.version>2.2</spark-core.version>
+        <spark-core.version>2.5</spark-core.version>
         <jetty.version>9.3.2.v20150730</jetty.version>
-        <log4j2.version>2.3</log4j2.version>
-        <slf4j.version>1.7.12</slf4j.version>
+        <log4j2.version>2.6.2</log4j2.version>
+        <slf4j.version>1.7.21</slf4j.version>
         <junit.version>4.12</junit.version>
     </properties>
 
@@ -65,7 +65,7 @@
                 </exclusion>
             </exclusions>
         </dependency>
-        
+
         <!-- JETTY -->
         <dependency>
             <groupId>org.eclipse.jetty</groupId>
@@ -151,7 +151,7 @@
         <dependency>
             <groupId>com.lmax</groupId>
             <artifactId>disruptor</artifactId>
-            <version>3.3.2</version>
+            <version>3.3.4</version>
         </dependency>
 
         <!-- UNIT TEST -->
@@ -186,7 +186,7 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
-                <version>2.5.1</version>
+                <version>3.5.1</version>
                 <configuration>
                     <source>${jdk.version}</source>
                     <target>${jdk.version}</target>
@@ -194,7 +194,7 @@
                     <debug>true</debug>
                 </configuration>
             </plugin>
-            
+
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-surefire-plugin</artifactId>
@@ -204,7 +204,7 @@
                     <reuseForks>false</reuseForks>
                 </configuration>
             </plugin>
-            
+
             <!-- Jetty: mvn jetty:run -->
             <plugin>
                 <groupId>org.eclipse.jetty</groupId>
