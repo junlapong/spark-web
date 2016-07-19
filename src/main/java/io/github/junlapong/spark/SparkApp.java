@@ -1,5 +1,6 @@
 package io.github.junlapong.spark;
 
+import static spark.Spark.secure;
 import static spark.Spark.get;
 
 import java.util.HashMap;
@@ -19,8 +20,9 @@ public class SparkApp {
 
     	log.debug("***** Spark as Java App *****");
 
-    	spark.Spark.port(9090);
-    	log.debug("URL: http://localhost:9090/hello");
+    	spark.Spark.port(9443);
+        secure("keystore.p12", "P@ssw0rd", null, null);
+    	log.debug("URL: https://localhost:9443/hello");
 
     	get("/hello", (request, response) -> {
     	    Map<String, Object> attributes = new HashMap<>();

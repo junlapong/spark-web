@@ -2,6 +2,7 @@
 log
 *.log
 *.bak
+dependency-reduced-pom.xml
 
 ### Eclipse ###
 .classpath
