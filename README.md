@@ -6,12 +6,13 @@ Spark - A tiny Sinatra inspired framework for creating web applications in Java 
 
 ## Maven
 
-Add the dependency to your pom.xml:
+Add the dependency to your `pom.xml`
+
 ```xml
 <dependency>
     <groupId>com.sparkjava</groupId>
     <artifactId>spark-core</artifactId>
-    <version>2.5</version>
+    <version>2.9.1</version>
 </dependency>
 ```
 
@@ -38,9 +39,11 @@ public class WebApp implements spark.servlet.SparkApplication {
 ```
 
 ## Run
-```
-mvn jetty:run
-```
+
+    mvn -f pom-war.xml jetty:run
+
+Then open url http://localhost:9080/hello
+
 ## Run on web server
 
 To run Spark on a web server (instead of the embedded jetty server), an implementation of the interface spark.servlet.SparkApplication is needed. You have to initialize the routes in the init() method, and the following filter has to be configured in your web.xml
@@ -60,3 +63,24 @@ To run Spark on a web server (instead of the embedded jetty server), an implemen
     <url-pattern>/*</url-pattern>
 </filter-mapping>
 ```
+
+## Examples
+
+### 1. Spark App (jar package)
+
+please see `pom.xml`, you can test with mvn as example below
+
+    mvn test exec:java
+
+or build jar package and run
+
+    mvn clean package
+    java -jar target/spark-app-01.jar
+
+### 2. Spark Web (war package)
+
+please see `pom-war.xml` you can test with mvn as example below
+
+    mvn -f pom-war.xml jetty:run
+
+or build war package and deploy to serverlet container

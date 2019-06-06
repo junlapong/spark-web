@@ -19,17 +19,17 @@ public class FreeMarkerExample {
     
     public static void main(String args[]) {
 
-	log.debug("***** START *****");
+		log.debug("***** START *****");
 
-	spark.Spark.port(9090);
-	log.debug("URL: http://localhost:9090/hello");
+		spark.Spark.port(9090);
+		log.debug("URL: http://localhost:9090/hello");
 
-	get("/hello", (request, response) -> {
-	    Map<String, Object> attributes = new HashMap<>();
-	    attributes.put("message", "Hello World!");
-	    log.debug("{}", COUNT++);
-	    return new ModelAndView(attributes, "hello.ftl");
-	}, new FreeMarkerEngine());
-    }
+		get("/hello", (request, response) -> {
+			Map<String, Object> attributes = new HashMap<>();
+			attributes.put("message", "Hello World!");
+			log.debug("{}", COUNT++);
+			return new ModelAndView(attributes, "hello.ftl");
+		}, new FreeMarkerEngine());
+	}
 
 }

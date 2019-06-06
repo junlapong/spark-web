@@ -1,23 +1,20 @@
 ### GIT ignore ###
-log
+logs/
 *.log
 *.bak
-dependency-reduced-pom.xml
 
 ### Eclipse ###
 .classpath
 .project
-.settings
+.settings/
 
 ### Maven ###
-target
+target/
 
 # OS generated files #
 ######################
 .DS_Store
-.DS_Store?
-._*
-.Spotlight-V100
-.Trashes
-ehthumbs.db
 Thumbs.db
+
+.factorypath
+.vscode/

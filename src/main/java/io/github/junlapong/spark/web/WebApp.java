@@ -31,6 +31,5 @@ public class WebApp implements spark.servlet.SparkApplication {
     	    return new ModelAndView(attributes, "hello.ftl");
 
     	}, new FreeMarkerEngine());
-
     }
 }

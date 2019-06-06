@@ -12,8 +12,8 @@ public class WebAppTest {
     @Test
     public void shouldSpark() throws Exception {
 
-	log.debug("***** START TDD *****");
-	Assert.assertNull(null);
-	log.debug("***** END TDD *****");
+        log.debug("***** START TDD *****");
+        Assert.assertNull(null);
+        log.debug("***** END TDD *****");
     }
 }

@@ -5,12 +5,15 @@ import static spark.Spark.get;
 
 import java.util.HashMap;
 import java.util.Map;
-import lombok.extern.slf4j.Slf4j;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import spark.ModelAndView;
 import spark.template.freemarker.FreeMarkerEngine;
 
-@Slf4j
 public class SparkApp {
+
+	private static final Logger log = LoggerFactory.getLogger(SparkApp.class);
 
     public static void main(String[] args) {
 
